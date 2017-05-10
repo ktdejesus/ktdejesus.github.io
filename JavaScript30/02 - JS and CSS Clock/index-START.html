@@ -85,14 +85,14 @@
       secondHand.style.transform = `rotate(${secondDegrees}deg)`;
 
       const minutes = now.getMinutes();
-      const minuteDegrees = (minutes * 6) + 90;
+      const minuteDegrees = (minutes * 6) + (seconds/360) + 90;
       minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
 
       const hours = now.getHours();
-      const hourDegrees = (hours * 6) + 90;
+      const hourDegrees = (hours * 30) + (minutes/2) + 90;
       hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 
-      console.log(seconds);
+      console.log(hourDegrees - 90);
     }
 
     setInterval(setDate, 1000);
